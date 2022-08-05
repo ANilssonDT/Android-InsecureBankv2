@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
 
     defaultConfig {
-        applicationId "com.android.insecurebankv2"
+        applicationId "com.anilssondt.insecurebankv2"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 2
