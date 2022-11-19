@@ -10,6 +10,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./InsecureBankv2
 
     steps:
     - uses: actions/checkout@v3
@@ -21,9 +24,9 @@ jobs:
         cache: gradle
 
     - name: Grant execute permission for gradlew
-      run: chmod +x ./InsecureBankv2/gradlew
+      run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./InsecureBankv2/gradlew build
+      run: ./gradlew build
     - name: Upload to Data Theorem
       uses: datatheorem/datatheorem-mobile-secure-action@v2.1.0
       with:
