@@ -24,3 +24,8 @@ jobs:
       run: chmod +x ./InsecureBankv2/gradlew
     - name: Build with Gradle
       run: ./InsecureBankv2/gradlew build
+    - name: Upload to Data Theorem
+      uses: datatheorem/datatheorem-mobile-secure-action@v2.1.0
+      with:
+        UPLOAD_BINARY_PATH: "./app/build/outputs/apk/debug/app-debug.apk"
+        DT_UPLOAD_API_KEY: ${{ secrets.DT_UPLOAD_API_KEY }}
