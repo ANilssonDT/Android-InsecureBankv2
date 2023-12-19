@@ -47,6 +47,7 @@ module. This new password can then be used by the user to log in to the account.
 */
 
 public class DoLogin extends Activity {
+	
 	String responseString = null;
 	//	Stores the username passed by the calling intent
 	String username;
