@@ -1,34 +1,34 @@
-name: Android CI
+# name: Android CI
 
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+# on:
+#   push:
+#     branches: [ "master" ]
+#   pull_request:
+#     branches: [ "master" ]
 
-jobs:
-  build:
+# jobs:
+#   build:
 
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./InsecureBankv2
+#     runs-on: ubuntu-latest
+#     defaults:
+#       run:
+#         working-directory: ./InsecureBankv2
 
-    steps:
-    - uses: actions/checkout@v3
-    - name: set up JDK 11
-      uses: actions/setup-java@v3
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-        cache: gradle
+#     steps:
+#     - uses: actions/checkout@v3
+#     - name: set up JDK 11
+#       uses: actions/setup-java@v3
+#       with:
+#         java-version: '11'
+#         distribution: 'temurin'
+#         cache: gradle
 
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
-    - name: Upload to Data Theorem
-      uses: datatheorem/datatheorem-mobile-secure-action@v2.1.0
-      with:
-        UPLOAD_BINARY_PATH: "./app/build/outputs/apk/debug/app-debug.apk"
-        DT_UPLOAD_API_KEY: ${{ secrets.DT_UPLOAD_API_KEY }}
+#     - name: Grant execute permission for gradlew
+#       run: chmod +x gradlew
+#     - name: Build with Gradle
+#       run: ./gradlew build
+#     - name: Upload to Data Theorem
+#       uses: datatheorem/datatheorem-mobile-secure-action@v2.1.0
+#       with:
+#         UPLOAD_BINARY_PATH: "./app/build/outputs/apk/debug/app-debug.apk"
+#         DT_UPLOAD_API_KEY: ${{ secrets.DT_UPLOAD_API_KEY }}
