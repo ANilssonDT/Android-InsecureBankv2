@@ -15,8 +15,6 @@ makejson = json.dumps
 
 DEFAULT_PORT_NO = 8888
 
-# test comment
-
 def usageguide():
     print "InsecureBankv2 Backend-Server"
     print "Options: "
